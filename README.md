@@ -1,29 +1,30 @@
 # base-sdk
+> 基础SDK
 
-## Project setup
+- [Vue.js](https://cn.vuejs.org/)
+- [element-ui](http://element.eleme.io/#/zh-CN)
+
+## 产出
+- [base-sdk](http://base-sdk.cancss.com/#/)
+
+## 复制配置文件
+
+复制`server.config.example.js`为`server.config.js`（此文件会被git忽略），用于配置代理目标host。
+
+## 安装依赖
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## 启动项目
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 部署项目
 
-### Run your tests
 ```
-npm run test
+npm run deploy
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
