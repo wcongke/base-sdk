@@ -9,5 +9,7 @@
   "author": "Vincent Wen",
   "license": "ISC",
   "dependencies": {
+    "clipboard": "^2.0.4",
+    "highlight.js": "^9.15.6"
   }
 }
