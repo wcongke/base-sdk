@@ -146,6 +146,32 @@ const merge = (target, ...args) => {
   return target
 }
 
+/**
+ * 获取路由参数
+ * @param {String} name -参数名称
+ * @returns {String} 参数值
+ */
+const getUrlParam = (name) => {
+  const url = window.location.toString()
+  const arrObj = url.split('?')
+
+  if (arrObj.length > 1) {
+    const arrPara = arrObj[1].split('&')
+    let arr
+
+    for (let i = 0; i < arrPara.length; i++) {
+      arr = arrPara[i].split('=')
+
+      if (arr != null && arr[0] === name) {
+        return arr[1]
+      }
+    }
+    return ''
+  } else {
+    return ''
+  }
+}
+
 export default {
   clone,
   typeOf,
@@ -154,5 +180,6 @@ export default {
   decodeHTMLEntities,
   formatDate,
   imgHtmlProcess,
-  merge
+  merge,
+  getUrlParam
 }
