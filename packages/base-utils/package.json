@@ -1,6 +1,6 @@
 {
   "name": "can.base-utils",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "can.base-utils",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,19 @@
   "author": "Vincent Wen",
   "license": "ISC",
   "dependencies": {
+    "image-webpack-loader": "^5.0.0",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
-    "axios": "^0.17.1"
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "axios": "^0.17.1",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "babel-polyfill": "^6.26.0",
+    "compression-webpack-plugin": "^3.0.0",
+    "es6-promise": "^4.2.8",
+    "webpack-bundle-analyzer": "^3.3.2"
   },
   "peerDependencies": {
     "axios": "^0.17.1"
