@@ -182,5 +182,30 @@ export default {
         })
       }, reject)
     })
+  },
+
+  /**
+   * 城市查询
+   * @function [geocoder]
+   * @see {@link https://lbs.amap.com/api/javascript-api/reference/location/}
+   * @param {String} amapKey - 高德key
+   * @returns {Promise} Promise实例
+   */
+  citySearch (amapKey) {
+    return new Promise((resolve, reject) => {
+      this.ready(amapKey, (AMap) => {
+        AMap.service('AMap.CitySearch', () => {
+          const citySearch = new AMap.CitySearch()
+
+          citySearch.getLocalCity((status, result) => {
+            if (status === 'complete') {
+              resolve(result)
+            } else {
+              reject(new Error('当前位置信息解析失败'))
+            }
+          })
+        })
+      }, reject)
+    })
   }
 }
