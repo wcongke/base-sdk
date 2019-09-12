@@ -172,6 +172,27 @@ const getUrlParam = (name) => {
   }
 }
 
+/**
+ * 格式化数据
+ * @param {String} value value
+ * @param {String} typeArray 类型数组
+ * @return {String} label
+ */
+const formatData = (value, typeArray) => {
+  if (!value) return '-'
+  if (!typeArray || !typeArray.length) return value
+
+  let label = ''
+
+  typeArray.forEach((item) => {
+    if (item.value === value) {
+      label = item.label
+    }
+  })
+
+  return label
+}
+
 export default {
   clone,
   typeOf,
@@ -181,5 +202,6 @@ export default {
   formatDate,
   imgHtmlProcess,
   merge,
-  getUrlParam
+  getUrlParam,
+  formatData
 }
