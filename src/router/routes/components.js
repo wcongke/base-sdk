@@ -19,6 +19,15 @@ export default [{
         module: 'components'
       },
       component: () => import('@/views/components/install-component/index.vue')
+    },
+    {
+      name: 'components.calendar',
+      path: 'calendar',
+      meta: {
+        title: '日历',
+        module: 'components'
+      },
+      component: () => import('@/views/components/calendar/index.vue')
     }
   ]
 }]

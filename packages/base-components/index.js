@@ -3,13 +3,15 @@ import VerticalMenu from './vertical-menu/index'
 import Anchor from './anchor/index'
 import Code from './code/index'
 import InstallComponent from './install-component/index'
+import Calendar from './calendar/index'
 
 const components = [
   HorizontalMenu,
   VerticalMenu,
   Anchor,
   Code,
-  InstallComponent
+  InstallComponent,
+  Calendar
 ]
 
 const install = (Vue) => {

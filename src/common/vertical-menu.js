@@ -14,6 +14,11 @@ export default (data = {}) => ({
       name: 'components.install-component',
       text: 'install-component 组件安装说明',
       disabled: false
+    },
+    {
+      name: 'components.calendar',
+      text: 'Calendar 日历',
+      disabled: false
     }
     // {
     //   name: 'components.radio',
