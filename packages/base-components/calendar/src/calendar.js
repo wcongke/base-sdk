@@ -198,8 +198,6 @@ export default {
     selectMonth (month) {
       this.selectedMonth = this.currentMonth = month
 
-      console.log(this.currentYear, this.currentMonth)
-
       this.initData(this.formatDate(this.currentYear, this.currentMonth, 1))
       this.modelIsShow = false
     }

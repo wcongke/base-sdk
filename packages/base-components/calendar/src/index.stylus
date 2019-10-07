@@ -1,0 +1,175 @@
+.calendar
+  background-color #fff
+  display inline-block
+  width 100%
+  border-radius 4px
+  font-size 14px
+  position relative
+
+  &__header
+    display flex
+    align-items center
+    line-height 60px
+    margin 0 10px
+    border-bottom 1px solid #eee
+    padding 0 10px
+
+    span
+      display inline-block
+      width 30px
+
+    &--left
+      flex 1
+
+    // &--left,
+    // &--right
+    //   width 70px
+    //   cursor pointer
+
+    // &--center
+    //   flex 1
+    //   cursor pointer
+
+    &--title
+      display inline-block
+      margin-right 10px
+      font-size 18px
+      cursor pointer
+
+  &__weekdays
+    // border-bottom 1px solid #eee
+    line-height 36px
+
+  &__days
+
+    li
+      line-height 36px
+      cursor pointer
+
+      div
+        border 1px solid #eeeeee
+        margin-left -1px
+        margin-bottom -1px
+        padding 10px 0
+
+      &.active
+        background-color #f2f8fe
+
+        span
+          color #1989fa
+
+  &__weekdays,
+  &__days
+    display flex
+    flex-wrap wrap
+    text-align center
+    list-style-type none
+
+    .today
+      color #00a0e2 !important
+
+    .undisable
+      color #333
+
+    // span.active
+    //   color #fff !important
+    //   width 24px
+    //   height 24px
+    //   line-height 24px
+    //   border-radius 24px
+    //   background-color #00a0e2
+    //   display inline-block
+
+    .drop
+      width 5px
+      height 5px
+      display block
+      margin 0 auto
+      border-radius 5px
+
+      &--green
+        background-color #1ac02f
+
+      &--yellow
+        background-color #fecc04
+
+      &--red
+        background-color #fe0003
+
+    li
+      width 14.2%
+      display inline-block
+      flex-shrink 0
+      color #aaa
+
+  &__years,
+  &__months
+    display flex
+    flex-wrap wrap
+    text-align center
+    list-style-type none
+
+    .current
+      color #00a0e2 !important
+
+    .undisable
+      color #333
+
+    .active
+      color #fff !important
+      width 40px
+      height 40px
+      line-height 40px
+      border-radius 40px
+      background-color #00a0e2
+      display inline-block
+
+    li
+      line-height 50px
+      cursor pointer
+      width 25%
+      display inline-block
+      flex-shrink 0
+      color #333
+
+  &__body
+    padding 0 20px 20px
+
+  &__footer
+    border-top 1px solid #eee
+    line-height 30px
+    display flex
+
+    &--left-btn
+      border-right 1px solid  #eee !important
+
+    button
+      flex 1
+      border none
+      line-height 40px
+      font-size 14px
+      background-color #fff
+
+  &__model
+    position absolute
+    top 54px
+    left 0
+    bottom 0
+    right 0
+    background-color #fff
+    border-bottom-left-radius 4px
+    border-bottom-right-radius 4px
+
+    &__footer
+      position absolute
+      left 0
+      bottom 0
+      right 0
+      border-top 1px solid  #eee !important
+
+      &__btn
+        width 100%
+        border none
+        line-height 40px
+        font-size 14px
+        background-color #fff

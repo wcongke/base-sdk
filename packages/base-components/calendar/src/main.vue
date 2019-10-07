@@ -1,162 +1,25 @@
 <style lang="stylus" scoped>
-.calendar
-  background-color #fff
-  display inline-block
-  width 300px
-  border-radius 4px
-  font-size 14px
-  position relative
-
-  &__header
-    display flex
-    text-align center
-    line-height 40px
-    padding 0 10px
-
-    span
-      display inline-block
-      width 30px
-
-    &--left,
-    &--right
-      width 70px
-      cursor pointer
-
-    &--center
-      flex 1
-      cursor pointer
-
-  &__weekdays
-    border-bottom 1px solid #eee
-    line-height 30px
-
-  &__days
-
-    li
-      line-height 36px
-      cursor pointer
-
-  &__weekdays,
-  &__days
-    display flex
-    flex-wrap wrap
-    text-align center
-    list-style-type none
-
-    .today
-      color #00a0e2 !important
-
-    .undisable
-      color #333
-
-    .active
-      color #fff !important
-      width 24px
-      height 24px
-      line-height 24px
-      border-radius 24px
-      background-color #00a0e2
-      display inline-block
-
-    .drop
-      width 5px
-      height 5px
-      display block
-      margin 0 auto
-      border-radius 5px
-
-      &--green
-        background-color #1ac02f
-
-      &--yellow
-        background-color #fecc04
-
-      &--red
-        background-color #fe0003
-
-    li
-      width 14.2%
-      display inline-block
-      flex-shrink 0
-      color #aaa
-
-  &__years,
-  &__months
-    display flex
-    flex-wrap wrap
-    text-align center
-    list-style-type none
-
-    .current
-      color #00a0e2 !important
-
-    .undisable
-      color #333
-
-    .active
-      color #fff !important
-      width 40px
-      height 40px
-      line-height 40px
-      border-radius 40px
-      background-color #00a0e2
-      display inline-block
-
-    li
-      line-height 50px
-      cursor pointer
-      width 25%
-      display inline-block
-      flex-shrink 0
-      color #333
-
-  &__body
-    padding 0 10px 10px
-
-  &__footer
-    border-top 1px solid #eee
-    line-height 30px
-    display flex
-
-    &--left-btn
-      border-right 1px solid  #eee !important
-
-    button
-      flex 1
-      border none
-      line-height 40px
-      font-size 14px
-      background-color #fff
-
-  &__model
-    position absolute
-    top 40px
-    left 0
-    bottom 0
-    right 0
-    background-color #fff
-    border-bottom-left-radius 4px
-    border-bottom-right-radius 4px
-
-    &__footer
-      position absolute
-      left 0
-      bottom 0
-      right 0
-      border-top 1px solid  #eee !important
-
-      &__btn
-        width 100%
-        border none
-        line-height 40px
-        font-size 14px
-        background-color #fff
+@import './index.stylus'
 </style>
 
 <template>
   <div class="calendar">
     <div class="calendar__header">
       <div class="calendar__header--left">
+        <div class="calendar__header--title" @click="showModel(currentYear)">{{ currentYear }}年{{ currentMonth }}月</div>
+      </div>
+      <div class="calendar__header--right">
+        <el-button-group v-if="modelIsShow && !selectedYear">
+          <el-button size="mini" icon="el-icon-d-arrow-left" @click="createYearArray(years[0])"></el-button>
+          <el-button size="mini" icon="el-icon-d-arrow-right" @click="createYearArray(years[11])"></el-button>
+        </el-button-group>
+        <el-button-group v-if="!modelIsShow">
+          <el-button size="mini" @click="pickPre(currentYear, currentMonth)">上个月</el-button>
+          <el-button size="mini" @click="initData(), selectDay(today)">今天</el-button>
+          <el-button size="mini" @click="pickNext(currentYear, currentMonth)">下个月</el-button>
+        </el-button-group>
+      </div>
+      <!-- <div class="calendar__header--left">
         <span v-if="modelIsShow && !selectedYear" @click="createYearArray(years[0])">&#60;&#60;</span>
         <span v-if="!modelIsShow" @click="pickPreYear(currentYear, currentMonth)">&#60;&#60;</span>
         <span v-if="!modelIsShow" @click="pickPre(currentYear, currentMonth)">&#60;</span>
@@ -166,7 +29,7 @@
         <span v-if="!modelIsShow" @click="pickNext(currentYear, currentMonth)">&#62;</span>
         <span v-if="!modelIsShow" @click="pickNextYear(currentYear, currentMonth)">&#62;&#62;</span>
         <span v-if="modelIsShow && !selectedYear" @click="createYearArray(years[11])">&#62;&#62;</span>
-      </div>
+      </div> -->
     </div>
     <div class="calendar__body">
       <ul class="calendar__weekdays">
@@ -179,14 +42,16 @@
         <li>日</li>
       </ul>
       <ul class="calendar__days">
-        <li v-for="(item, index) in days" :key="index" @click="selectDay(item, spare)">
-          <span
+        <li v-for="(item, index) in days" :key="index" :class="{'active': activeDay(item, selectedDay)}" @click="selectDay(item, spare)">
+          <div>
+            <span
             :class="{'today': item.getFullYear() === today.getFullYear()
             && item.getMonth() === today.getMonth()
             && item.getDate() === today.getDate(),
             'undisable': undisableDay(item, spare),
             'active': activeDay(item, selectedDay)}">{{item.getDate()}}</span>
-          <span class="drop" :class="`drop--${dayColor(item, spare)}`"></span>
+            <span class="drop" :class="`drop--${dayColor(item, spare)}`"></span>
+          </div>
         </li>
       </ul>
     </div>

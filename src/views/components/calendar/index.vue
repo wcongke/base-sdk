@@ -32,6 +32,13 @@
         </div>
       </el-col>
     </el-row>
+    <el-row class="mt10">
+      <el-col :span="24">
+        <div class="calendar-container">
+          <base-calendar v-model="date2" :show-footer="false"/>
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -43,7 +50,12 @@ export default {
        * 日期
        * @type {Date}
        */
-      date1: null
+      date1: null,
+      /**
+       * 日期
+       * @type {Date}
+       */
+      date2: null
     }
   },
   methods: {
