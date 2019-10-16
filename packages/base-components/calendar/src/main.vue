@@ -219,6 +219,11 @@ export default {
 
     this.pickPre(this.currentYear, this.currentMonth)
     this.pickNext(this.currentYear, this.currentMonth)
+  },
+  watch: {
+    value (newVal) {
+      this.selectedDay = new Date(this.value)
+    }
   }
 }
 </script>
