@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "can.pc-bc": "0.0.2",
+    "clipboard": "^2.0.4",
     "element-ui": "^2.4.11",
+    "highlight.js": "^9.16.2",
     "vue": "^2.5.21",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
