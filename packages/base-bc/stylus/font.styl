@@ -26,6 +26,33 @@ $fs-s = 12px
   
   &--fs-s
     font-size $fs-s
+
+  /**
+   * 字体粗细
+   */
+  &--fw-bold
+    font-weight bold
+
+  &--fw-bolder
+    font-weight bolder
+
+  /**
+   * font-size
+   * 以px为单位
+   */
+  // .fs-10, .fs-12, ..., fs-48
+  for $i in 1..48
+    &--fs-{$i*2}
+      font-size 2px * $i
+
+  /**
+   * font-weight
+   * 以px为单位
+   */
+  // .fw-100, .fw-200, ..., fw-900
+  for $i in 1..9
+    &--fw-{$i*100}
+      font-weight 100 * $i
   
   /**
   * 不换行
