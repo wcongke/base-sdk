@@ -193,6 +193,21 @@ const formatData = (value, typeArray) => {
   return label
 }
 
+/**
+ * 几天之后
+ * @param {Number} val - 数值
+ * @returns {Date}
+ */
+const howDayLater = (val) => {
+  // 今天
+  const today = new Date()
+  // 几天后
+  let howDayLater = today.setDate(today.getDate() + val)
+  howDayLater = new Date(howDayLater)
+
+  return howDayLater
+}
+
 export default {
   clone,
   typeOf,
@@ -203,5 +218,6 @@ export default {
   imgHtmlProcess,
   merge,
   getUrlParam,
-  formatData
+  formatData,
+  howDayLater
 }
