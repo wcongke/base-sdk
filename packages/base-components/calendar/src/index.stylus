@@ -87,15 +87,6 @@
       margin 0 auto
       border-radius 5px
 
-      &--green
-        background-color #1ac02f
-
-      &--yellow
-        background-color #fecc04
-
-      &--red
-        background-color #fe0003
-
     li
       width 14.2%
       display inline-block

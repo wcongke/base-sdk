@@ -50,7 +50,7 @@
             && item.getDate() === today.getDate(),
             'undisable': undisableDay(item, spare),
             'active': activeDay(item, selectedDay)}">{{item.getDate()}}</span>
-            <span class="drop" :class="`drop--${dayColor(item, spare)}`"></span>
+            <span class="drop" :style="{backgroundColor: dayColor(item, spare)}"></span>
           </div>
         </li>
       </ul>

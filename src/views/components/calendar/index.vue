@@ -63,11 +63,13 @@ export default {
       const day = item.getDay()
 
       if (day === 1) {
-        return 'green'
+        return '#1ac02f'
       } else if (day === 2) {
-        return 'yellow'
+        return '#fecc04'
+      } else if (day === 3) {
+        return '#fe0003'
       } else {
-        return 'red'
+        return '#cccccc'
       }
     }
   }
