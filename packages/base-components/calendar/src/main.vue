@@ -166,6 +166,7 @@ export default {
 
       this.selectedDay = day
       this.$emit('input', day)
+      this.$emit('change', day)
     },
     /**
      * 当前
