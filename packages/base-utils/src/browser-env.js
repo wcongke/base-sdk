@@ -78,3 +78,19 @@ export function isWindowsWechat () {
 export function isInOrdinaryBrower () {
   return !inMicroMessenger && !inAliApp
 }
+
+/**
+ * 判断是pc
+ * @return {Boolean} 是与否
+ */
+export function isPC () {
+  var Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod')
+  var flag = true
+  for (var v = 0; v < Agents.length; v++) {  
+    if (userAgent.indexOf(Agents[v]) > 0) {
+      flag = false
+      break
+    }
+  }
+  return flag
+}
