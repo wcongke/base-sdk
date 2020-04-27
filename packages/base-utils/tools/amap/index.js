@@ -29,7 +29,7 @@ export default {
           this.promise = null
           resolve(this.AMap = global.AMap)
         }
-        loadScript(`//webapi.amap.com/maps?v=1.4.8&key=${amapKey}&callback=${callback}`, {
+        loadScript(`//webapi.amap.com/maps?v=2.0&key=${amapKey}&callback=${callback}`, {
           async: true,
           defer: true
         }).catch(() => {

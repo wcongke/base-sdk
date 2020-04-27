@@ -1,6 +1,6 @@
 {
   "name": "can.base-utils",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "can.base-utils",
   "main": "index.js",
   "scripts": {
