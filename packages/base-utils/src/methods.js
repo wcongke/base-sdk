@@ -179,7 +179,7 @@ const getUrlParam = (name) => {
  * @return {String} label
  */
 const formatData = (value, typeArray) => {
-  if (!value) return '-'
+  if (value === null || value === undefined) return '-'
   if (!typeArray || !typeArray.length) return value
 
   let label = ''
