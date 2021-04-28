@@ -84,9 +84,9 @@ export function isInOrdinaryBrower () {
  * @return {Boolean} 是与否
  */
 export function isPC () {
-  var Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod')
+  var Agents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod']
   var flag = true
-  for (var v = 0; v < Agents.length; v++) {  
+  for (var v = 0; v < Agents.length; v++) {
     if (userAgent.indexOf(Agents[v]) > 0) {
       flag = false
       break

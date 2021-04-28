@@ -38,7 +38,7 @@ function play (AudioContext, decodeBuffer) {
  * 播放音频
  * @param {String} url - 音频地址
  */
-export function playAudio (url) {
+export function playAudio (context, url) {
   const AudioContext = new (window.AudioContext || window.webkitAudioContext)()
   request(url).then((audioMedia) => {
     AudioContext.decodeAudioData(audioMedia, decode => play(context, decode))
@@ -54,4 +54,3 @@ export function text2audio (text) {
 
   playAudio(url)
 }
-
